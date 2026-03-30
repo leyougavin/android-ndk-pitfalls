@@ -18,5 +18,12 @@ ExternalProject_Add(
     INSTALL_COMMAND ""
 )
 target_link_libraries(${odr_name} PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/shared/src/shared_demo-build/libodr_shared.so)
-# target_link_options(${odr_name} PRIVATE -Wl,--exclude-libs,libc++_static.a) # -Wl,--exclude-libs,ALL
 add_dependencies(${odr_name} shared_demo)
+
+# method 2
+# target_link_options(${odr_name} PRIVATE -Wl,--exclude-libs,libc++_static.a) # -Wl,--exclude-libs,ALL
+
+# method 3
+# target_link_options(${odr_name} PRIVATE -Wl,--version-script,${CMAKE_SOURCE_DIR}/odr_test.map.txt
+#                                         -Wl,--no-undefined-version)
+# set_target_properties(${odr_name} PROPERTIES LINK_DEPENDS ${CMAKE_SOURCE_DIR}/odr_test.map.txt)

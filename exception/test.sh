@@ -1,10 +1,6 @@
-# 1. ndk r26d / ndk r27d
-# 2. odr_test(c++_static) link libodr_shared.so(c++_shared)
-# 3. libodr_shared.so call stream operator
-
 SCRIPT_DIR=$(dirname "$0")
 PROJECT_DIR=$(realpath "${SCRIPT_DIR}")
-BUILD_DIR="${PROJECT_DIR}/build"
+BUILD_DIR="${PROJECT_DIR}/.build"
 
 rm -r ${BUILD_DIR}
 

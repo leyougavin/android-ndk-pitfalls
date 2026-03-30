@@ -1,0 +1,9 @@
+{
+    global:
+        *;
+    local:
+        extern "C++" {
+            "std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::basic_streambuf()";
+            "std::__ndk1::locale::~locale()";
+        };
+};

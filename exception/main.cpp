@@ -3,7 +3,9 @@
 
 __attribute__ ((visibility("default"))) void shared()
 {
+    // method 1
     // std::ios_base::Init init;
+
     std::stringstream ss;
     ss << "Hello World!" << std::endl;
 }
